@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Uthai Red Fire Hot Sauce — Louisiana-inspired, Thai twist. 270ml bottle. ฿150 or 2 bottles for ฿200.">
+  <title>Uthai Red Fire | Hot Sauce</title>
+  <style>
+    :root {
+      --red: #ff1717;
+      --dark-red: #b40000;
+      --black: #050505;
+      --white: #f5f5f5;
+      --grey: #171717;
+      --muted: #bcbcbc;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--white);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.5;
+    }
+    body:before {
+      content: "";
+      position: fixed;
+      inset: 10px;
+      border: 2px solid var(--red);
+      pointer-events: none;
+      z-index: 20;
+      border-radius: 18px;
+      opacity: .9;
+    }
+    .wrap { width: min(1100px, 92%); margin: auto; }
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      place-items: center;
+      padding: 70px 0 50px;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(255,23,23,.18), transparent 35%),
+        linear-gradient(#050505, #090909);
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 45px;
+      align-items: center;
+    }
+    .logo {
+      width: min(100%, 500px);
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 25px rgba(255,0,0,.15));
+    }
+    .eyebrow {
+      color: var(--red);
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+    h1 {
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      text-transform: uppercase;
+      font-size: clamp(58px, 10vw, 112px);
+      line-height: .82;
+      margin: 15px 0;
+      color: var(--red);
+      letter-spacing: .02em;
+      text-shadow: 4px 4px 0 #650000;
+    }
+    .hero h2 {
+      margin: 0 0 18px;
+      font-size: clamp(25px, 4vw, 42px);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .hero p { color: #ddd; font-size: 20px; max-width: 620px; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn {
+      display: inline-block;
+      padding: 14px 23px;
+      border: 2px solid var(--red);
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: .08em;
+      background: var(--red);
+      transition: .2s;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); background: #d90000; }
+    .btn.alt { background: transparent; }
+    section { padding: 85px 0; border-top: 1px solid #222; }
+    .section-title {
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-size: clamp(30px, 5vw, 48px);
+      margin: 0 0 12px;
+    }
+    .section-title span { color: var(--red); }
+    .intro {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .product {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .label {
+      width: min(100%, 390px);
+      max-height: 700px;
+      object-fit: contain;
+      display: block;
+      margin: auto;
+      border: 1px solid #252525;
+      box-shadow: 0 0 35px rgba(255,0,0,.08);
+    }
+    .price {
+      border: 2px solid var(--red);
+      padding: 25px;
+      background: #090909;
+      margin: 20px 0;
+    }
+    .price strong { color: var(--red); font-size: 42px; }
+    .promo {
+      font-size: 24px;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: 4px;
+    }
+    .details { color: #ccc; font-size: 18px; }
+    .details li { margin: 10px 0; }
+    .order-box {
+      max-width: 760px;
+      margin: auto;
+      border: 2px solid var(--red);
+      padding: clamp(22px, 5vw, 45px);
+      background: #090909;
+    }
+    form { display: grid; gap: 16px; }
+    label { font-weight: bold; text-transform: uppercase; letter-spacing: .06em; font-size: 14px; }
+    input, select, textarea {
+      width: 100%;
+      margin-top: 7px;
+      padding: 14px;
+      background: #111;
+      color: white;
+      border: 1px solid #555;
+      font: inherit;
+      border-radius: 0;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      background: #151515;
+      border-left: 5px solid var(--red);
+      font-size: 21px;
+    }
+    .total strong { color: var(--red); font-size: 30px; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      max-width: 850px;
+      margin: auto;
+    }
+    .contact {
+      border: 1px solid #333;
+      padding: 24px 15px;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      background: #090909;
+    }
+    .contact:hover { border-color: var(--red); }
+    .contact b { display: block; color: var(--red); font-size: 20px; margin-bottom: 7px; }
+    footer { padding: 45px 0 65px; text-align: center; color: #777; }
+    .tiny { font-size: 13px; color: #777; }
+    @media (max-width: 800px) {
+      body:before { inset: 5px; border-radius: 10px; }
+      .hero-inner, .product { grid-template-columns: 1fr; }
+      .hero { min-height: auto; padding-top: 80px; }
+      .hero-copy { text-align: center; }
+      .hero p { margin-left: auto; margin-right: auto; }
+      .buttons { justify-content: center; }
+      .contact-grid { grid-template-columns: 1fr; }
+      section { padding: 65px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow">Uthai Hot Sauce · Blend No. 1</div>
+      <h1>Red Fire</h1>
+      <h2>Hot Sauce</h2>
+      <p><strong>Louisiana-inspired. Thai twist.</strong><br>
+      A thick, Sriracha-style hot sauce made with a select blend of Thai chillies sourced locally in Uthai Thani.</p>
+      <div class="buttons">
+        <a class="btn" href="#order">Order Now</a>
+        <a class="btn alt" href="#product">See The Sauce</a>
+      </div>
+    </div>
+    <div>
+      <img class="logo" src="uthai-red-fire-logo.png" alt="Uthai Red Fire Hot Sauce logo">
+    </div>
+  </div>
+</header>
+
+<section id="product">
+  <div class="wrap">
+    <h2 class="section-title">Meet <span>Red Fire</span></h2>
+    <p class="intro">Bold chilli flavour, serious heat and a Thai twist. Made for Pad Kapow, eggs, fried chicken, burgers, fries, noodles, rice and almost anything that needs more fire.</p>
+    <div class="product">
+      <img class="label" src="uthai-red-fire-label.png" alt="Uthai Red Fire Hot Sauce label">
+      <div>
+        <h3 style="font-size:32px; text-transform:uppercase;">270ml · Uthai Thani</h3>
+        <p class="details">Ingredients: select blend of Thai chillies, sea salt, palm sugar and rice vinegar.</p>
+        <div class="price">
+          <strong>฿150</strong>
+          <div>per 270ml bottle</div>
+          <div class="promo">🔥 2 bottles for ฿200</div>
+        </div>
+        <ul class="details">
+          <li>Delivery within Uthai Town: ฿20</li>
+          <li>Made for everyday Thai food and Western favourites</li>
+          <li>Order directly through the form below</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="order">
+  <div class="wrap">
+    <h2 class="section-title">Order <span>Red Fire</span></h2>
+    <p class="intro">Fill in your details and we'll get back to you to confirm the order and payment.</p>
+
+    <div class="order-box">
+      <!-- Replace YOUR-EMAIL@example.com below with the email address that should receive orders. -->
+      <form action="https://formsubmit.co/YOUR-EMAIL@example.com" method="POST">
+        <input type="hidden" name="_subject" value="New Uthai Red Fire Order">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://example.com/thank-you.html">
+
+        <label>Your Name
+          <input type="text" name="Name" required>
+        </label>
+
+        <label>Phone / LINE
+          <input type="text" name="Phone or LINE" required>
+        </label>
+
+        <label>Delivery Address
+          <textarea name="Delivery Address" required></textarea>
+        </label>
+
+        <label>Number of Bottles
+          <select id="quantity" name="Number of Bottles" required>
+            <option value="1">1 bottle — ฿150</option>
+            <option value="2">2 bottles — ฿200 PROMO</option>
+            <option value="3">3 bottles — ฿350</option>
+            <option value="4">4 bottles — ฿400</option>
+            <option value="5">5 bottles — ฿550</option>
+            <option value="6">6 bottles — ฿600</option>
+          </select>
+        </label>
+
+        <label>Order Notes
+          <textarea name="Order Notes" placeholder="Anything we should know?"></textarea>
+        </label>
+
+        <div class="total">
+          <span>Estimated total including ฿20 Uthai Town delivery</span>
+          <strong id="total">฿170</strong>
+        </div>
+
+        <button class="btn" type="submit">Send Order</button>
+        <div class="tiny">Orders are confirmed personally before payment or delivery.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2 class="section-title">Talk To <span>Us</span></h2>
+    <p class="intro">Prefer to order directly? Contact Uthai Hot Sauce by LINE, phone or email.</p>
+    <div class="contact-grid">
+      <a class="contact" href="https://line.me/ti/p/~YOUR_LINE_ID">
+        <b>LINE</b>
+        YOUR LINE ID
+      </a>
+      <a class="contact" href="tel:+66YOURNUMBER">
+        <b>PHONE</b>
+        +66 YOUR NUMBER
+      </a>
+      <a class="contact" href="mailto:YOUR-EMAIL@example.com">
+        <b>EMAIL</b>
+        YOUR-EMAIL@example.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong style="color:#fff;">UTHAI HOT SAUCE</strong><br>
+    <span>UTHAI RED FIRE · HOT SAUCE · BLEND No. 1</span>
+    <p class="tiny">© 2026 Uthai Hot Sauce</p>
+  </div>
+</footer>
+
+<script>
+  const prices = {1:150, 2:200, 3:350, 4:400, 5:550, 6:600};
+  const quantity = document.getElementById('quantity');
+  const total = document.getElementById('total');
+
+  function updateTotal() {
+    const qty = Number(quantity.value);
+    total.textContent = '฿' + (prices[qty] + 20);
+  }
+  quantity.addEventListener('change', updateTotal);
+</script>
+</body>
+</html>
