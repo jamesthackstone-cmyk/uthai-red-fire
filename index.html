@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Uthai Red Fire Hot Sauce — Louisiana-inspired, Thai twist. 270ml bottle. ฿150 or 2 bottles for ฿200.">
-  <title>Uthai Red Fire | Hot Sauce</title>
+  <meta name="description" content="Uthai RED FIRE Hot Sauce — Louisiana-inspired, Thai twist. 270ml bottle. ฿150 or 2 bottles for ฿200.">
+  <title>Uthai RED FIRE | Hot Sauce</title>
   <style>
     :root {
       --red: #ff1717;
@@ -49,11 +49,19 @@
       gap: 45px;
       align-items: center;
     }
-    .logo {
-      width: min(100%, 500px);
-      display: block;
+    .logo-badge {
+      width: min(100%, 430px);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
       margin: 0 auto;
-      filter: drop-shadow(0 0 25px rgba(255,0,0,.15));
+      overflow: visible;
+    }
+    .logo {
+      width: 92%;
+      display: block;
+      transform: rotate(-45deg);
+      filter: drop-shadow(0 0 25px rgba(255,0,0,.2));
     }
     .eyebrow {
       color: var(--red);
@@ -188,6 +196,7 @@
     }
     .contact:hover { border-color: var(--red); }
     .contact b { display: block; color: var(--red); font-size: 20px; margin-bottom: 7px; }
+    .line-primary { border: 2px solid var(--red); background: #160000; transform: scale(1.03); }
     footer { padding: 45px 0 65px; text-align: center; color: #777; }
     .tiny { font-size: 13px; color: #777; }
     @media (max-width: 800px) {
@@ -196,6 +205,7 @@
       .hero { min-height: auto; padding-top: 80px; }
       .hero-copy { text-align: center; }
       .hero p { margin-left: auto; margin-right: auto; }
+      .logo-badge { width: min(88vw, 390px); }
       .buttons { justify-content: center; }
       .contact-grid { grid-template-columns: 1fr; }
       section { padding: 65px 0; }
@@ -208,27 +218,27 @@
   <div class="wrap hero-inner">
     <div class="hero-copy">
       <div class="eyebrow">Uthai Hot Sauce · Blend No. 1</div>
-      <h1>Red Fire</h1>
+      <h1>RED FIRE</h1>
       <h2>Hot Sauce</h2>
       <p><strong>Louisiana-inspired. Thai twist.</strong><br>
       A thick, Sriracha-style hot sauce made with a select blend of Thai chillies sourced locally in Uthai Thani.</p>
       <div class="buttons">
-        <a class="btn" href="#order">Order Now</a>
-        <a class="btn alt" href="#product">See The Sauce</a>
+        <a class="btn" href="https://line.me/ti/p/~uthaihotsauce">ORDER ON LINE</a>
+        <a class="btn alt" href="#product">SEE THE SAUCE</a>
       </div>
     </div>
     <div>
-      <img class="logo" src="uthai-red-fire-logo.png" alt="Uthai Red Fire Hot Sauce logo">
+      <div class="logo-badge"><img class="logo" src="uthai-red-fire-logo.png" alt="Uthai RED FIRE Hot Sauce logo"></div>
     </div>
   </div>
 </header>
 
 <section id="product">
   <div class="wrap">
-    <h2 class="section-title">Meet <span>Red Fire</span></h2>
+    <h2 class="section-title">Meet <span>RED FIRE</span></h2>
     <p class="intro">Bold chilli flavour, serious heat and a Thai twist. Made for Pad Kapow, eggs, fried chicken, burgers, fries, noodles, rice and almost anything that needs more fire.</p>
     <div class="product">
-      <img class="label" src="uthai-red-fire-label.png" alt="Uthai Red Fire Hot Sauce label">
+      <img class="label" src="uthai-red-fire-label.png" alt="Uthai RED FIRE Hot Sauce label">
       <div>
         <h3 style="font-size:32px; text-transform:uppercase;">270ml · Uthai Thani</h3>
         <p class="details">Ingredients: select blend of Thai chillies, sea salt, palm sugar and rice vinegar.</p>
@@ -249,13 +259,15 @@
 
 <section id="order">
   <div class="wrap">
-    <h2 class="section-title">Order <span>Red Fire</span></h2>
-    <p class="intro">Fill in your details and we'll get back to you to confirm the order and payment.</p>
+    <h2 class="section-title">Order <span>RED FIRE</span></h2>
+    <p class="intro"><strong style="color:#fff;">For the quickest order, message us on LINE.</strong><br>
+    <a href="https://line.me/ti/p/~uthaihotsauce" style="color:var(--red);font-weight:bold;text-decoration:none;">@uthaihotsauce</a><br>
+    Or use the order form below and we'll contact you to confirm the order and payment.</p>
 
     <div class="order-box">
       <!-- Replace jamesthackstone@gmail.com below with the email address that should receive orders. -->
       <form action="https://formsubmit.co/jamesthackstone@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New Uthai Red Fire Order">
+        <input type="hidden" name="_subject" value="New Uthai RED FIRE Order">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_honey" style="display:none">
 
@@ -301,11 +313,11 @@
 <section id="contact">
   <div class="wrap">
     <h2 class="section-title">Talk To <span>Us</span></h2>
-    <p class="intro">Prefer to order directly? Contact Uthai Hot Sauce by LINE, phone or email.</p>
+    <p class="intro">LINE is our main contact point for orders. Phone and email are also available if you prefer.</p>
     <div class="contact-grid">
-      <a class="contact" href="https://line.me/ti/p/~uthaihotsauce">
-        <b>LINE</b>
-        uthaihotsauce
+      <a class="contact line-primary" href="https://line.me/ti/p/~uthaihotsauce">
+        <b>ORDER ON LINE</b>
+        @uthaihotsauce
       </a>
       <a class="contact" href="tel:+66902856704">
         <b>PHONE</b>
