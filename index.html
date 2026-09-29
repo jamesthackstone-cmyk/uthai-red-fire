@@ -87,6 +87,76 @@
       letter-spacing: .08em;
     }
     .hero p { color: #ddd; font-size: 20px; max-width: 620px; }
+    .hero-order {
+      margin-top: 28px;
+      padding: 22px;
+      border: 2px solid var(--red);
+      background: linear-gradient(135deg, #130000, #080808);
+      max-width: 560px;
+    }
+    .hero-price {
+      color: var(--red);
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .hero-price span {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 400;
+    }
+    .hero-promo {
+      font-size: 21px;
+      font-weight: 800;
+      margin: 10px 0 17px;
+      letter-spacing: .05em;
+    }
+    .line-button {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+      padding: 16px 19px;
+      background: #06c755;
+      color: #fff;
+      text-decoration: none;
+      border: 2px solid #fff;
+      box-shadow: 0 0 22px rgba(6,199,85,.22);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .line-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(6,199,85,.35);
+    }
+    .line-icon {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: 17px;
+      border: 2px solid #fff;
+      border-radius: 6px;
+      padding: 7px 5px;
+    }
+    .line-button span:last-child {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    .line-button strong {
+      font-family: Arial, sans-serif;
+      font-size: 19px;
+      letter-spacing: .04em;
+    }
+    .line-button small {
+      margin-top: 2px;
+      font-size: 14px;
+      opacity: .95;
+    }
+    .delivery-note {
+      text-align: center;
+      margin-top: 10px;
+      color: #bbb;
+      font-size: 14px;
+    }
     .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
     .btn {
       display: inline-block;
@@ -149,6 +219,17 @@
     }
     .details { color: #ccc; font-size: 18px; }
     .details li { margin: 10px 0; }
+    .inline-line-link {
+      display: inline-block;
+      margin-top: 8px;
+      color: #06c755;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .line-order-card {
+      max-width: 760px;
+      margin: 0 auto 18px;
+    }
     .order-box {
       max-width: 760px;
       margin: auto;
@@ -205,6 +286,8 @@
       .hero { min-height: auto; padding-top: 80px; }
       .hero-copy { text-align: center; }
       .hero p { margin-left: auto; margin-right: auto; }
+      .hero-order { margin-left: auto; margin-right: auto; }
+      .line-button strong { font-size: 17px; }
       .logo-badge { width: min(88vw, 390px); }
       .buttons { justify-content: center; }
       .contact-grid { grid-template-columns: 1fr; }
@@ -222,8 +305,18 @@
       <h2>Hot Sauce</h2>
       <p><strong>Louisiana-inspired. Thai twist.</strong><br>
       A thick, Sriracha-style hot sauce made with a select blend of Thai chillies sourced locally in Uthai Thani.</p>
+
+      <div class="hero-order">
+        <div class="hero-price">฿150 <span>· 270ml</span></div>
+        <div class="hero-promo">🔥 2 BOTTLES FOR ฿200</div>
+        <a class="line-button" href="https://line.me/ti/p/~uthaihotsauce" target="_blank" rel="noopener">
+          <span class="line-icon">LINE</span>
+          <span><strong>ORDER DIRECTLY ON LINE</strong><small>@uthaihotsauce</small></span>
+        </a>
+        <div class="delivery-note">฿20 delivery within Uthai Town</div>
+      </div>
+
       <div class="buttons">
-        <a class="btn" href="https://line.me/ti/p/~uthaihotsauce">ORDER ON LINE</a>
         <a class="btn alt" href="#product">SEE THE SAUCE</a>
       </div>
     </div>
@@ -260,9 +353,16 @@
 <section id="order">
   <div class="wrap">
     <h2 class="section-title">Order <span>RED FIRE</span></h2>
-    <p class="intro"><strong style="color:#fff;">For the quickest order, message us on LINE.</strong><br>
-    <a href="https://line.me/ti/p/~uthaihotsauce" style="color:var(--red);font-weight:bold;text-decoration:none;">@uthaihotsauce</a><br>
-    Or use the order form below and we'll contact you to confirm the order and payment.</p>
+    <p class="intro"><strong style="color:#fff;">LINE is the quickest way to order.</strong><br>
+    <a href="https://line.me/ti/p/~uthaihotsauce" class="inline-line-link" target="_blank" rel="noopener">ORDER ON LINE · @uthaihotsauce</a><br>
+    The form below is available if you prefer to order by email.</p>
+
+    <div class="line-order-card">
+      <a class="line-button" href="https://line.me/ti/p/~uthaihotsauce" target="_blank" rel="noopener">
+        <span class="line-icon">LINE</span>
+        <span><strong>ORDER DIRECTLY ON LINE</strong><small>@uthaihotsauce · Fastest way to order</small></span>
+      </a>
+    </div>
 
     <div class="order-box">
       <!-- Replace jamesthackstone@gmail.com below with the email address that should receive orders. -->
