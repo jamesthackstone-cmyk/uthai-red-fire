@@ -97,22 +97,10 @@ a{text-decoration:none;color:inherit}
 
   <section class="order" id="order">
     <h2>Order <span>RED FIRE</span></h2>
-    <p>LINE is the quickest way to order. If you prefer, use the form below and we'll confirm your order personally.</p>
-    <div class="order-box">
-      <form action="https://formsubmit.co/jamesthackstone@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New Uthai RED FIRE Order">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_honey" style="display:none">
-        <label>Your Name<input type="text" name="Name" required></label>
-        <label>Phone / LINE<input type="text" name="Phone or LINE" required></label>
-        <label>Delivery Address<textarea name="Delivery Address" required></textarea></label>
-        <label>Number of Bottles<select id="quantity" name="Number of Bottles" required>
-          <option value="1">1 bottle — ฿150</option><option value="2">2 bottles — ฿200 PROMO</option><option value="3">3 bottles — ฿350</option><option value="4">4 bottles — ฿400</option><option value="5">5 bottles — ฿550</option><option value="6">6 bottles — ฿600</option>
-        </select></label>
-        <label>Order Notes<textarea name="Order Notes"></textarea></label>
-        <div class="total">Estimated total including ฿20 delivery: <strong id="total">฿170</strong></div>
-        <button class="submit" type="submit">Send Order by Email</button>
-      </form>
+    <p>Order directly through LINE and we'll confirm your bottles and delivery details there.</p>
+    <div class="order-box" style="text-align:center">
+      <a class="line-button" href="https://line.me/ti/p/~uthaihotsauce" target="_blank" rel="noopener"><span class="line-bubble">LINE</span> ORDER DIRECTLY ON LINE @uthaihotsauce</a>
+      <p style="margin-top:18px">฿150 per bottle · 2 bottles for ฿200 · ฿20 delivery within Uthai Town</p>
     </div>
   </section>
 
@@ -125,9 +113,6 @@ a{text-decoration:none;color:inherit}
 </main>
 <footer>UTHAI HOT SAUCE · UTHAI RED FIRE · HOT SAUCE · BLEND No. 1</footer>
 <script>
-const prices={1:150,2:200,3:350,4:400,5:550,6:600};
-const q=document.getElementById('quantity'); const total=document.getElementById('total');
-q.addEventListener('change',()=>{total.textContent='฿'+(prices[Number(q.value)]+20)});
 </script>
 </body>
 </html>
