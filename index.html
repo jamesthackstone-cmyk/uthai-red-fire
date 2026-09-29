@@ -1,454 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Uthai RED FIRE Hot Sauce — Louisiana-inspired, Thai twist. 270ml bottle. ฿150 or 2 bottles for ฿200.">
-  <title>Uthai RED FIRE | Hot Sauce</title>
-  <style>
-    :root {
-      --red: #ff1717;
-      --dark-red: #b40000;
-      --black: #050505;
-      --white: #f5f5f5;
-      --grey: #171717;
-      --muted: #bcbcbc;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--black);
-      color: var(--white);
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.5;
-    }
-    body:before {
-      content: "";
-      position: fixed;
-      inset: 10px;
-      border: 2px solid var(--red);
-      pointer-events: none;
-      z-index: 20;
-      border-radius: 18px;
-      opacity: .9;
-    }
-    .wrap { width: min(1100px, 92%); margin: auto; }
-    .hero {
-      min-height: 92vh;
-      display: grid;
-      place-items: center;
-      padding: 70px 0 50px;
-      background:
-        radial-gradient(circle at 50% 20%, rgba(255,23,23,.18), transparent 35%),
-        linear-gradient(#050505, #090909);
-    }
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 45px;
-      align-items: center;
-    }
-    .logo-badge {
-      width: min(100%, 430px);
-      aspect-ratio: 1;
-      display: grid;
-      place-items: center;
-      margin: 0 auto;
-      overflow: visible;
-    }
-    .logo {
-      width: 92%;
-      display: block;
-      transform: rotate(-45deg);
-      filter: drop-shadow(0 0 25px rgba(255,0,0,.2));
-    }
-    .eyebrow {
-      color: var(--red);
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      font-size: 15px;
-    }
-    h1 {
-      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-      text-transform: uppercase;
-      font-size: clamp(58px, 10vw, 112px);
-      line-height: .82;
-      margin: 15px 0;
-      color: var(--red);
-      letter-spacing: .02em;
-      text-shadow: 4px 4px 0 #650000;
-    }
-    .hero h2 {
-      margin: 0 0 18px;
-      font-size: clamp(25px, 4vw, 42px);
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-    .hero p { color: #ddd; font-size: 20px; max-width: 620px; }
-    .hero-order {
-      margin-top: 28px;
-      padding: 22px;
-      border: 2px solid var(--red);
-      background: linear-gradient(135deg, #130000, #080808);
-      max-width: 560px;
-    }
-    .hero-price {
-      color: var(--red);
-      font-size: 42px;
-      font-weight: 800;
-      line-height: 1;
-    }
-    .hero-price span {
-      color: #fff;
-      font-size: 20px;
-      font-weight: 400;
-    }
-    .hero-promo {
-      font-size: 21px;
-      font-weight: 800;
-      margin: 10px 0 17px;
-      letter-spacing: .05em;
-    }
-    .line-button {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      width: 100%;
-      padding: 16px 19px;
-      background: #06c755;
-      color: #fff;
-      text-decoration: none;
-      border: 2px solid #fff;
-      box-shadow: 0 0 22px rgba(6,199,85,.22);
-      transition: transform .2s, box-shadow .2s;
-    }
-    .line-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 30px rgba(6,199,85,.35);
-    }
-    .line-icon {
-      font-family: Arial, sans-serif;
-      font-weight: 900;
-      font-size: 17px;
-      border: 2px solid #fff;
-      border-radius: 6px;
-      padding: 7px 5px;
-    }
-    .line-button span:last-child {
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-    }
-    .line-button strong {
-      font-family: Arial, sans-serif;
-      font-size: 19px;
-      letter-spacing: .04em;
-    }
-    .line-button small {
-      margin-top: 2px;
-      font-size: 14px;
-      opacity: .95;
-    }
-    .delivery-note {
-      text-align: center;
-      margin-top: 10px;
-      color: #bbb;
-      font-size: 14px;
-    }
-    .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-    .btn {
-      display: inline-block;
-      padding: 14px 23px;
-      border: 2px solid var(--red);
-      color: white;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: .08em;
-      background: var(--red);
-      transition: .2s;
-      cursor: pointer;
-    }
-    .btn:hover { transform: translateY(-2px); background: #d90000; }
-    .btn.alt { background: transparent; }
-    section { padding: 85px 0; border-top: 1px solid #222; }
-    .section-title {
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: .13em;
-      font-size: clamp(30px, 5vw, 48px);
-      margin: 0 0 12px;
-    }
-    .section-title span { color: var(--red); }
-    .intro {
-      max-width: 700px;
-      margin: 0 auto 40px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 18px;
-    }
-    .product {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 50px;
-      align-items: center;
-    }
-    .label {
-      width: min(100%, 390px);
-      max-height: 700px;
-      object-fit: contain;
-      display: block;
-      margin: auto;
-      border: 1px solid #252525;
-      box-shadow: 0 0 35px rgba(255,0,0,.08);
-    }
-    .price {
-      border: 2px solid var(--red);
-      padding: 25px;
-      background: #090909;
-      margin: 20px 0;
-    }
-    .price strong { color: var(--red); font-size: 42px; }
-    .promo {
-      font-size: 24px;
-      text-transform: uppercase;
-      font-weight: bold;
-      margin-top: 4px;
-    }
-    .details { color: #ccc; font-size: 18px; }
-    .details li { margin: 10px 0; }
-    .inline-line-link {
-      display: inline-block;
-      margin-top: 8px;
-      color: #06c755;
-      font-weight: 800;
-      text-decoration: none;
-    }
-    .line-order-card {
-      max-width: 760px;
-      margin: 0 auto 18px;
-    }
-    .order-box {
-      max-width: 760px;
-      margin: auto;
-      border: 2px solid var(--red);
-      padding: clamp(22px, 5vw, 45px);
-      background: #090909;
-    }
-    form { display: grid; gap: 16px; }
-    label { font-weight: bold; text-transform: uppercase; letter-spacing: .06em; font-size: 14px; }
-    input, select, textarea {
-      width: 100%;
-      margin-top: 7px;
-      padding: 14px;
-      background: #111;
-      color: white;
-      border: 1px solid #555;
-      font: inherit;
-      border-radius: 0;
-    }
-    textarea { min-height: 110px; resize: vertical; }
-    .total {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px;
-      background: #151515;
-      border-left: 5px solid var(--red);
-      font-size: 21px;
-    }
-    .total strong { color: var(--red); font-size: 30px; }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      max-width: 850px;
-      margin: auto;
-    }
-    .contact {
-      border: 1px solid #333;
-      padding: 24px 15px;
-      text-align: center;
-      color: white;
-      text-decoration: none;
-      background: #090909;
-    }
-    .contact:hover { border-color: var(--red); }
-    .contact b { display: block; color: var(--red); font-size: 20px; margin-bottom: 7px; }
-    .line-primary { border: 2px solid var(--red); background: #160000; transform: scale(1.03); }
-    footer { padding: 45px 0 65px; text-align: center; color: #777; }
-    .tiny { font-size: 13px; color: #777; }
-    @media (max-width: 800px) {
-      body:before { inset: 5px; border-radius: 10px; }
-      .hero-inner, .product { grid-template-columns: 1fr; }
-      .hero { min-height: auto; padding-top: 80px; }
-      .hero-copy { text-align: center; }
-      .hero p { margin-left: auto; margin-right: auto; }
-      .hero-order { margin-left: auto; margin-right: auto; }
-      .line-button strong { font-size: 17px; }
-      .logo-badge { width: min(88vw, 390px); }
-      .buttons { justify-content: center; }
-      .contact-grid { grid-template-columns: 1fr; }
-      section { padding: 65px 0; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Uthai RED FIRE Hot Sauce — Louisiana-inspired, Thai twist. 270ml. ฿150 or 2 bottles for ฿200.">
+<title>UTHAI RED FIRE | Hot Sauce</title>
+<style>
+:root{--red:#f11616;--green:#06c755;--black:#050505;--cream:#f5efe4;--muted:#d5d0c8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:#fff;font-family:Georgia,"Times New Roman",serif}
+a{text-decoration:none;color:inherit}
+.topbar{position:absolute;z-index:5;top:0;left:0;right:0;padding:22px 5%;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.brand-mini{font-family:Impact,Arial Narrow,sans-serif;text-transform:uppercase;font-size:30px;line-height:.78;color:#fff}
+.brand-mini span{display:block;color:var(--red);font-size:35px;font-style:italic}
+.nav{display:flex;gap:30px;font-family:Arial,sans-serif;font-size:14px}
+.nav a:hover{color:var(--red)}
+.top-line{background:var(--green);padding:13px 20px;border:2px solid #fff;border-radius:13px;font-family:Arial,sans-serif;font-weight:900;letter-spacing:.04em;white-space:nowrap}
+.hero{min-height:860px;position:relative;overflow:hidden;background:
+radial-gradient(circle at 75% 45%,rgba(255,0,0,.10),transparent 30%),
+linear-gradient(90deg,rgba(5,5,5,.96) 0%,rgba(5,5,5,.83) 43%,rgba(5,5,5,.32) 100%),
+url("uthai-red-fire-label.png");
+background-size:auto,auto,cover;background-position:center}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#050505 0,transparent 18%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:1240px;margin:auto;min-height:860px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;padding:120px 5% 70px}
+.hero-copy{padding-bottom:20px}
+.eyebrow{color:var(--red);font:700 15px/1 Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase}
+h1{font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:clamp(76px,10vw,145px);line-height:.78;text-transform:uppercase;margin:18px 0 14px;color:var(--red);font-style:italic;letter-spacing:.01em;text-shadow:5px 5px 0 #610000}
+.hero h2{font-size:clamp(28px,3vw,46px);margin:0 0 14px;text-transform:uppercase;letter-spacing:.13em}
+.tagline{font-size:24px;margin:0 0 25px}
+.hero-copy p{max-width:610px;color:#ddd;font-size:18px;line-height:1.55}
+.hero-cta{max-width:600px;margin-top:26px}
+.line-main{display:flex;align-items:center;gap:18px;background:var(--green);border:2px solid #fff;border-radius:14px;padding:18px 24px;font-family:Arial,sans-serif;box-shadow:0 0 30px rgba(6,199,85,.22);transition:.2s}
+.line-main:hover{transform:translateY(-2px);box-shadow:0 0 38px rgba(6,199,85,.34)}
+.line-bubble{background:#fff;color:var(--green);border-radius:50%;padding:12px 9px;font-weight:900;font-size:15px}
+.line-main strong{display:block;font-size:25px}
+.line-main small{display:block;font-size:15px;margin-top:3px}
+.price-row{display:flex;gap:0;margin-top:22px;border-top:1px solid #555;border-bottom:1px solid #555}
+.price-card{flex:1;padding:15px 18px;border-right:1px solid #555}
+.price-card:last-child{border-right:0}
+.price-card b{display:block;color:#fff;font:bold 25px Arial,sans-serif}
+.price-card span{color:#bbb;font:14px Arial,sans-serif}
+.price-card.promo b{color:var(--red)}
+.hero-bottle{display:flex;justify-content:center;align-items:center;height:680px}
+.hero-bottle img{width:min(430px,95%);max-height:700px;object-fit:contain;filter:drop-shadow(0 28px 22px rgba(0,0,0,.72));transform:translateY(20px)}
+.section{padding:85px 5%;border-top:1px solid #222}
+.section.cream{background:var(--cream);color:#191919}
+.section-inner{max-width:1120px;margin:auto}
+.section-title{text-align:center;text-transform:uppercase;letter-spacing:.12em;font-size:46px;margin:0 0 12px}
+.section-title span{color:var(--red)}
+.intro{text-align:center;max-width:720px;margin:0 auto 45px;color:#777;font-size:18px;line-height:1.55}
+.cream .intro{color:#555}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.feature{padding:15px 25px;border-right:1px solid #d5c9ba}
+.feature:last-child{border-right:0}
+.feature-icon{font-size:42px;color:var(--red)}
+.feature h3{color:var(--red);font-family:Arial,sans-serif;text-transform:uppercase;font-size:19px;margin:8px 0}
+.feature p{font-size:16px;line-height:1.5}
+.product{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}
+.product-bottle img{display:block;width:min(360px,100%);margin:auto;filter:drop-shadow(0 20px 20px rgba(0,0,0,.5))}
+.product-info h3{font-size:38px;margin:0 0 12px;text-transform:uppercase}
+.product-info p,.product-info li{color:#ccc;font-size:18px;line-height:1.55}
+.order-box{max-width:760px;margin:0 auto;border:2px solid var(--red);padding:35px;background:#090909}
+form{display:grid;gap:16px}
+label{font:700 13px Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em}
+input,select,textarea{width:100%;margin-top:7px;padding:14px;background:#111;color:#fff;border:1px solid #555;font:16px Georgia,serif}
+textarea{min-height:100px}
+.submit{border:0;background:var(--red);color:#fff;padding:16px;font:700 17px Arial,sans-serif;text-transform:uppercase;cursor:pointer}
+.contact{text-align:center;padding:55px 5%}
+.contact-line{display:inline-flex;margin-top:15px}
+footer{text-align:center;padding:35px;color:#777;border-top:1px solid #222}
+@media(max-width:900px){
+.topbar{position:relative;background:#050505;flex-wrap:wrap;padding:18px 5%}.nav{order:3;width:100%;justify-content:center;gap:16px}.top-line{margin-left:auto}
+.hero,.hero-inner{min-height:auto}.hero{background:linear-gradient(180deg,#050505 0%,#0c0907 100%)}.hero-inner{grid-template-columns:1fr;padding-top:55px;text-align:center}.hero-copy{order:1}.hero-bottle{order:2;height:auto;margin-top:25px}.hero-bottle img{width:min(310px,85vw)}.hero-copy p{margin-left:auto;margin-right:auto}.line-main{justify-content:center}.price-row{text-align:left}.features{grid-template-columns:1fr 1fr}.feature:nth-child(2){border-right:0}.product{grid-template-columns:1fr;gap:35px}
+}
+@media(max-width:520px){.brand-mini{font-size:24px}.brand-mini span{font-size:29px}.top-line{font-size:13px;padding:10px}.nav{font-size:12px;gap:10px}.hero-inner{padding-left:4%;padding-right:4%}h1{font-size:76px}.line-main strong{font-size:20px}.price-card{padding:12px 9px}.price-card b{font-size:20px}.features{grid-template-columns:1fr}.feature{border-right:0;border-bottom:1px solid #d5c9ba}.section{padding:65px 5%}.section-title{font-size:34px}}
+</style>
 </head>
 <body>
 
-<header class="hero">
-  <div class="wrap hero-inner">
+<header class="topbar">
+  <a class="brand-mini" href="#">UTHAI<span>RED FIRE</span></a>
+  <nav class="nav">
+    <a href="#home">Home</a><a href="#product">Our Sauce</a><a href="#ingredients">Ingredients</a><a href="#order">Order</a><a href="#contact">Contact</a>
+  </nav>
+  <a class="top-line" href="https://line.me/ti/p/~uthaihotsauce" target="_blank">LINE · ORDER ON LINE</a>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-inner">
     <div class="hero-copy">
       <div class="eyebrow">Uthai Hot Sauce · Blend No. 1</div>
       <h1>RED FIRE</h1>
       <h2>Hot Sauce</h2>
-      <p><strong>Louisiana-inspired. Thai twist.</strong><br>
-      A thick, Sriracha-style hot sauce made with a select blend of Thai chillies sourced locally in Uthai Thani.</p>
-
-      <div class="hero-order">
-        <div class="hero-price">฿150 <span>· 270ml</span></div>
-        <div class="hero-promo">🔥 2 BOTTLES FOR ฿200</div>
-        <a class="line-button" href="https://line.me/ti/p/~uthaihotsauce" target="_blank" rel="noopener">
-          <span class="line-icon">LINE</span>
+      <div class="tagline">Louisiana-inspired. Thai twist.</div>
+      <p>A thick, Sriracha-style hot sauce made with a select blend of Thai chillies sourced locally in Uthai Thani.</p>
+      <div class="hero-cta">
+        <a class="line-main" href="https://line.me/ti/p/~uthaihotsauce" target="_blank">
+          <span class="line-bubble">LINE</span>
           <span><strong>ORDER DIRECTLY ON LINE</strong><small>@uthaihotsauce</small></span>
         </a>
-        <div class="delivery-note">฿20 delivery within Uthai Town</div>
-      </div>
-
-      <div class="buttons">
-        <a class="btn alt" href="#product">SEE THE SAUCE</a>
-      </div>
-    </div>
-    <div>
-      <div class="logo-badge"><img class="logo" src="uthai-red-fire-logo.png" alt="Uthai RED FIRE Hot Sauce logo"></div>
-    </div>
-  </div>
-</header>
-
-<section id="product">
-  <div class="wrap">
-    <h2 class="section-title">Meet <span>RED FIRE</span></h2>
-    <p class="intro">Bold chilli flavour, serious heat and a Thai twist. Made for Pad Kapow, eggs, fried chicken, burgers, fries, noodles, rice and almost anything that needs more fire.</p>
-    <div class="product">
-      <img class="label" src="uthai-red-fire-label.png" alt="Uthai RED FIRE Hot Sauce label">
-      <div>
-        <h3 style="font-size:32px; text-transform:uppercase;">270ml · Uthai Thani</h3>
-        <p class="details">Ingredients: select blend of Thai chillies, sea salt, palm sugar and rice vinegar.</p>
-        <div class="price">
-          <strong>฿150</strong>
-          <div>per 270ml bottle</div>
-          <div class="promo">🔥 2 bottles for ฿200</div>
+        <div class="price-row">
+          <div class="price-card"><b>฿150</b><span>270ml bottle</span></div>
+          <div class="price-card promo"><b>2 FOR ฿200</b><span>RED FIRE promo</span></div>
+          <div class="price-card"><b>฿20</b><span>Uthai Town delivery</span></div>
         </div>
-        <ul class="details">
-          <li>Delivery within Uthai Town: ฿20</li>
-          <li>Made for everyday Thai food and Western favourites</li>
-          <li>Order directly through the form below</li>
-        </ul>
       </div>
+    </div>
+    <div class="hero-bottle"><img src="uthai-red-fire-bottle.png" alt="Uthai RED FIRE Blend No. 1 hot sauce bottle"></div>
+  </div>
+</section>
+
+<section class="section cream" id="ingredients">
+  <div class="section-inner">
+    <h2 class="section-title">Why <span>RED FIRE?</span></h2>
+    <p class="intro">Bold flavour, real ingredients and a Thai twist. Made in Uthai Thani for food that needs a little more fire.</p>
+    <div class="features">
+      <div class="feature"><div class="feature-icon">🌶</div><h3>Bold Flavour</h3><p>A Louisiana-inspired hot sauce with a Thai twist. Rich, tangy and full of character.</p></div>
+      <div class="feature"><div class="feature-icon">◒</div><h3>Real Ingredients</h3><p>Thai chillies, sea salt, palm sugar and rice vinegar.</p></div>
+      <div class="feature"><div class="feature-icon">⌂</div><h3>Locally Made</h3><p>Proudly made in Uthai Thani for those who like it hot.</p></div>
+      <div class="feature"><div class="feature-icon">🔥</div><h3>Good Food</h3><p>Add RED FIRE to Pad Kapow, eggs, fried chicken, burgers, noodles, rice and more.</p></div>
     </div>
   </div>
 </section>
 
-<section id="order">
-  <div class="wrap">
-    <h2 class="section-title">Order <span>RED FIRE</span></h2>
-    <p class="intro"><strong style="color:#fff;">LINE is the quickest way to order.</strong><br>
-    <a href="https://line.me/ti/p/~uthaihotsauce" class="inline-line-link" target="_blank" rel="noopener">ORDER ON LINE · @uthaihotsauce</a><br>
-    The form below is available if you prefer to order by email.</p>
-
-    <div class="line-order-card">
-      <a class="line-button" href="https://line.me/ti/p/~uthaihotsauce" target="_blank" rel="noopener">
-        <span class="line-icon">LINE</span>
-        <span><strong>ORDER DIRECTLY ON LINE</strong><small>@uthaihotsauce · Fastest way to order</small></span>
-      </a>
+<section class="section" id="product">
+  <div class="section-inner product">
+    <div class="product-bottle"><img src="uthai-red-fire-bottle.png" alt="Uthai RED FIRE Blend No. 1"></div>
+    <div class="product-info">
+      <h3>UTHAI <span style="color:var(--red)">RED FIRE</span></h3>
+      <p>Hot Sauce · Blend No. 1 · 270ml</p>
+      <p>Ingredients: select blend of Thai chillies, sea salt, palm sugar and rice vinegar.</p>
+      <ul><li>฿150 per bottle</li><li>2 bottles for ฿200</li><li>฿20 delivery within Uthai Town</li></ul>
+      <a class="line-main contact-line" href="https://line.me/ti/p/~uthaihotsauce" target="_blank"><span class="line-bubble">LINE</span><span><strong>ORDER @uthaihotsauce</strong><small>Message us directly</small></span></a>
     </div>
+  </div>
+</section>
 
+<section class="section" id="order">
+  <div class="section-inner">
+    <h2 class="section-title">Order <span>RED FIRE</span></h2>
+    <p class="intro">LINE is the quickest way to order. If you prefer, use the form below and we'll confirm your order personally.</p>
     <div class="order-box">
-      <!-- Replace jamesthackstone@gmail.com below with the email address that should receive orders. -->
       <form action="https://formsubmit.co/jamesthackstone@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="New Uthai RED FIRE Order">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_honey" style="display:none">
-
-        <label>Your Name
-          <input type="text" name="Name" required>
-        </label>
-
-        <label>Phone / LINE
-          <input type="text" name="Phone or LINE" required>
-        </label>
-
-        <label>Delivery Address
-          <textarea name="Delivery Address" required></textarea>
-        </label>
-
-        <label>Number of Bottles
+        <label>Your Name<input type="text" name="Name" required></label>
+        <label>Phone / LINE<input type="text" name="Phone or LINE" required></label>
+        <label>Delivery Address><textarea name="Delivery Address" required></textarea></label>
+        <label>Number of Bottles>
           <select id="quantity" name="Number of Bottles" required>
-            <option value="1">1 bottle — ฿150</option>
-            <option value="2">2 bottles — ฿200 PROMO</option>
-            <option value="3">3 bottles — ฿350</option>
-            <option value="4">4 bottles — ฿400</option>
-            <option value="5">5 bottles — ฿550</option>
-            <option value="6">6 bottles — ฿600</option>
+            <option value="1">1 bottle — ฿150</option><option value="2">2 bottles — ฿200 PROMO</option>
+            <option value="3">3 bottles — ฿350</option><option value="4">4 bottles — ฿400</option>
+            <option value="5">5 bottles — ฿550</option><option value="6">6 bottles — ฿600</option>
           </select>
         </label>
-
-        <label>Order Notes
-          <textarea name="Order Notes" placeholder="Anything we should know?"></textarea>
-        </label>
-
-        <div class="total">
-          <span>Estimated total including ฿20 Uthai Town delivery</span>
-          <strong id="total">฿170</strong>
-        </div>
-
-        <button class="btn" type="submit">Send Order</button>
-        <div class="tiny">Orders are confirmed personally before payment or delivery.</div>
+        <label>Order Notes<textarea name="Order Notes"></textarea></label>
+        <div style="padding:14px;background:#151515;border-left:5px solid var(--red);font:700 20px Arial,sans-serif">Estimated total: <span id="total" style="color:var(--red)">฿170</span></div>
+        <button class="submit" type="submit">Send Order by Email</button>
       </form>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <div class="wrap">
-    <h2 class="section-title">Talk To <span>Us</span></h2>
-    <p class="intro">LINE is our main contact point for orders. Phone and email are also available if you prefer.</p>
-    <div class="contact-grid">
-      <a class="contact line-primary" href="https://line.me/ti/p/~uthaihotsauce">
-        <b>ORDER ON LINE</b>
-        @uthaihotsauce
-      </a>
-      <a class="contact" href="tel:+66902856704">
-        <b>PHONE</b>
-        +66 YOUR NUMBER
-      </a>
-      <a class="contact" href="mailto:jamesthackstone@gmail.com">
-        <b>EMAIL</b>
-        jamesthackstone@gmail.com
-      </a>
-    </div>
-  </div>
+<section class="contact" id="contact">
+  <h2 class="section-title">Contact <span>Uthai Hot Sauce</span></h2>
+  <p>LINE is our main contact point.</p>
+  <a class="line-main contact-line" href="https://line.me/ti/p/~uthaihotsauce" target="_blank"><span class="line-bubble">LINE</span><span><strong>ORDER ON LINE</strong><small>@uthaihotsauce</small></span></a>
+  <p>Phone: +66 90 285 6704 · Email: jamesthackstone@gmail.com</p>
 </section>
+</main>
 
-<footer>
-  <div class="wrap">
-    <strong style="color:#fff;">UTHAI HOT SAUCE</strong><br>
-    <span>UTHAI RED FIRE · HOT SAUCE · BLEND No. 1</span>
-    <p class="tiny">© 2026 Uthai Hot Sauce</p>
-  </div>
-</footer>
+<footer>UTHAI HOT SAUCE · UTHAI RED FIRE · HOT SAUCE · BLEND No. 1</footer>
 
 <script>
-  const prices = {1:150, 2:200, 3:350, 4:400, 5:550, 6:600};
-  const quantity = document.getElementById('quantity');
-  const total = document.getElementById('total');
-
-  function updateTotal() {
-    const qty = Number(quantity.value);
-    total.textContent = '฿' + (prices[qty] + 20);
-  }
-  quantity.addEventListener('change', updateTotal);
+const prices={1:150,2:200,3:350,4:400,5:550,6:600};
+const q=document.getElementById('quantity'), t=document.getElementById('total');
+q.addEventListener('change',()=>t.textContent='฿'+(prices[Number(q.value)]+20));
 </script>
 </body>
 </html>
