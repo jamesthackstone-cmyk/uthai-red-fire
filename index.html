@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>UTHAI RED FIRE | Hot Sauce</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <meta name="description" content="UTHAI RED FIRE Hot Sauce. Louisiana-inspired. Thai twist. 270ml, ฿150 or 2 bottles for ฿200.">
 <style>
 :root{--red:#ef1717;--dark:#070707;--green:#06c755;--cream:#f4eee4}
@@ -22,8 +24,8 @@ a{text-decoration:none;color:inherit}
   .mobile-hero{display:block;position:relative;overflow:hidden;min-height:735px;padding:0 18px 28px;text-align:center;background:#080706 url('red-fire-black-hero.png') 76% top/auto 735px no-repeat}
   .mobile-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.30) 34%,rgba(0,0,0,.48) 64%,#070707 100%);pointer-events:none}
   .mobile-inner{position:relative;z-index:1;max-width:430px;margin:auto;padding-top:24px}
-  .mobile-nav{height:38px;display:flex;align-items:center;justify-content:space-between;margin-bottom:34px}.mobile-logo{font:700 15px Arial,sans-serif;letter-spacing:.02em}.mobile-logo span{color:var(--red);font-style:italic;font-size:20px}.hamb{font:26px Arial,sans-serif}
-  .mobile-brand small{display:block;font:700 14px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin-bottom:7px}.mobile-brand h1{margin:0;color:var(--red);font:italic 700 clamp(54px,16vw,78px)/.82 Impact,"Arial Narrow",sans-serif;letter-spacing:-.03em;text-shadow:0 2px 0 #000}.mobile-brand h2{margin:8px 0 0;font:700 27px Georgia,serif;letter-spacing:.06em;text-transform:uppercase}.mobile-brand p{margin:8px 0 18px;font:18px Georgia,serif}
+  .mobile-nav{height:54px;display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}.mobile-logo{display:block;width:82px;height:52px;object-fit:contain}.hamb{font:26px Arial,sans-serif}
+  .mobile-brand{display:flex;flex-direction:column;align-items:center}.mobile-main-logo{display:block;width:min(270px,78vw);height:auto;filter:drop-shadow(0 4px 8px rgba(0,0,0,.65));margin:0 auto 2px}.mobile-brand p{margin:4px 0 18px;font:18px Georgia,serif;text-shadow:0 2px 4px #000}
   .mobile-line{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:13px 12px;background:var(--green);border:2px solid #fff;border-radius:12px;font:700 16px/1.1 Arial,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.45)}.mobile-line .line-bubble{padding:9px 7px;font-size:14px}
   .mobile-prices{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:20px auto 0;max-width:390px;background:rgba(0,0,0,.72);border-radius:10px;padding:9px 3px}.mobile-price{font:700 13px/1.15 Arial,sans-serif;padding:5px 3px;border-right:1px solid rgba(255,255,255,.35)}.mobile-price:last-child{border-right:0}.mobile-price strong{display:block;font-size:19px}.mobile-price em{color:var(--red);font-style:normal;font-size:18px}
   .mobile-highlights{position:relative;z-index:1;background:var(--cream);color:#111;margin:30px -18px 0;padding:25px 20px;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:4px solid #111}.mh{padding:14px 10px;border-right:1px solid #d8cfc1;border-bottom:1px solid #d8cfc1;text-align:left}.mh:nth-child(2n){border-right:0}.mh:nth-last-child(-n+2){border-bottom:0}.mh h3{margin:0 0 7px;color:#d71919;font:700 15px/1.05 Arial,sans-serif;text-transform:uppercase}.mh p{margin:0;font:13px/1.3 Georgia,serif}
@@ -50,12 +52,10 @@ a{text-decoration:none;color:inherit}
 <!-- Mobile fallback keeps the same brand, copy and ordering functions without shrinking the desktop artwork to unreadable size. -->
 <section class="mobile-hero" id="mobile-home" aria-label="Uthai RED FIRE mobile homepage">
   <div class="mobile-inner">
-    <div class="mobile-nav"><div class="mobile-logo">UTHAI <span>RED FIRE</span></div><div class="hamb">☰</div></div>
+    <div class="mobile-nav"><img class="mobile-logo" src="uthai-red-fire-logo.png" alt="Uthai RED FIRE Hot Sauce"><div class="hamb" aria-label="Menu">☰</div></div>
     <div class="mobile-brand">
-      <small>UTHAI</small>
-      <h1>RED FIRE</h1>
-      <h2>Hot Sauce</h2>
-      <p>Blend No. 1 · Louisiana-inspired. Thai twist.</p>
+      <img class="mobile-main-logo" src="uthai-red-fire-logo.png" alt="UTHAI RED FIRE Hot Sauce · Blend No. 1">
+      <p>Louisiana-inspired. Thai twist.</p>
     </div>
     <a class="mobile-line" href="https://line.me/ti/p/~uthaihotsauce" target="_blank" rel="noopener"><span class="line-bubble">LINE</span> ORDER DIRECTLY ON LINE @uthaihotsauce</a>
     <div class="mobile-prices">
